@@ -21,6 +21,17 @@ def is_valid_walk(walk):
         return False
     return ns == 0 and ew == 0 #finally we will check we returned to our same position or not
 
+#shorter solutions
+def isValidWalk(walk):
+    return len(walk) == 10 and walk.count('n') == walk.count('s') and walk.count('e') == walk.count('w')
+
+def isValidWalk(walk):
+    if (walk.count('n') == walk.count('s') and 
+        walk.count('e') == walk.count('w') and
+        len(walk) == 10):
+            return True
+    return False
+
 #some test cases for you...
 is_valid_walk(['n','s','n','s','n','s','n','s','n','s']) #should return True
 #is_valid_walk(['w','e','w','e','w','e','w','e','w','e','w','e']) #should return False
